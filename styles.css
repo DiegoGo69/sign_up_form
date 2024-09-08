@@ -13,6 +13,8 @@ Use a better box model (opinionated).
 ::before,
 ::after {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html {
@@ -29,15 +31,6 @@ html {
 	line-height: 1.5; /* 1. Correct the line height in all browsers. */
 	-webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
 	tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
-}
-
-/*
-Sections
-========
-*/
-
-body {
-	margin: 0; /* Remove the margin in all browsers. */
 }
 
 /*
@@ -132,7 +125,6 @@ textarea {
 	font-family: inherit; /* 1 */
 	font-size: 100%; /* 1 */
 	line-height: 1.25; /* 1 */
-	margin: 0; /* 2 */
 }
 
 /**
@@ -144,14 +136,6 @@ button,
 [type='reset'],
 [type='submit'] {
 	-webkit-appearance: button;
-}
-
-/**
-Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
-*/
-
-legend {
-	padding: 0;
 }
 
 /**
@@ -216,12 +200,144 @@ summary {
 
 
 /* MINE */
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+header,
+footer {
+	flex: 0;
+}
+
+main {
+	flex: 1;
+	display: flex;
+}
+
+.img-container,
+.form-container {
+	width: 50%;
+	flex: auto;
+}
+
 ul {
 	list-style: none;
-	padding: 0;
-	margin: 0;
 }
 
 /* textarea {
 	resize: none;
 } */
+
+input,
+textarea,
+select,
+button {
+  width: 15rem;
+}
+
+input:optional {
+	border: 1px solid hsl(0, 0%, 60%);
+}
+input:required {
+	border: 1px solid hsl(0, 0%, 25%);
+}
+
+input:user-invalid {
+	border: 1px solid red;
+	box-shadow: 0 0 5px 0px red;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  box-shadow: inset 1px 1px 3px #ccc;
+  border-radius: 2px;
+}
+
+input:focus:invalid {
+	box-shadow: none;
+}
+
+p * {
+	display: block;
+}
+
+/* blue placeholder on email fields */
+input[type="email"]::placeholder {
+	color: blue;
+}
+
+select {
+  appearance: none;
+  width: 100%;
+  height: 100%;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 17rem;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  font-size: 1rem;
+  top: 0px;
+  right: 10px;
+  position: absolute;
+}
+
+/*  These are styles to take inspiration from */
+textarea {
+	display: block;
+  
+	padding: 10px;   
+	resize  : none;
+	overflow: auto;
+}
+
+button {
+	cursor: pointer;
+}
+
+button:hover,
+button:focus {
+	color: #fff;
+}
+
+input[type="radio"] {
+	appearance: none;
+}
+
+input[type="radio"] {
+	width: 1.25rem;
+	height: 1.25rem;
+	border-radius: 0.6rem;
+	border: 2px solid gray;
+	/* Adjusts the position of the checkboxes on the text baseline */
+	vertical-align: -2px;
+	outline: none;
+}
+
+input[type="radio"]::before {
+	display: block;
+	content: " ";
+	width: 0.6rem;
+	height: 0.6rem;
+	border-radius: 0.3rem;
+	background-color: red;
+	font-size: 1rem;
+	transform: translate(30%, 30%) scale(0);
+	transform-origin: center;
+	transition: all 0.3s ease-in;
+  }
+  
+  input[type="radio"]:checked::before {
+	transform: translate(30%, 30%) scale(1);
+	transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+  }
+
+  

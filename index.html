@@ -8,25 +8,27 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <header></header>    
-    <main>
+    <header>
         <h1>Live a VIP Formula 1 Grand Prix Experience</h1>
-        <h2>Register and win an imaginary trip to the 2024 Formula 1 Las Vegas GP</h2>
-        <div class="form">
+    </header>    
+    <main>
+        <div class="img-container">some image</div>
+        <div class="form-container">
             <form action="#" method="get">
+                <h2>Register and win an imaginary trip to the 2024 Formula 1 Las Vegas GP</h2>    
                 <p>
                     <label for="name">Name:</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" pattern="[\w\d]+" required>
                 </p>
 
                 <p>
                     <label for="age">Age:</label>
-                    <input type="number" name="age" id="age" step="1" min="1" max="100">
+                    <input type="number" name="age" id="age" step="1" min="1" max="100" required>
                 </p>
 
                 <p>
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" required>
                 </p>
 
                 <p>
@@ -36,39 +38,41 @@
 
                 <p>
                     <label for="pwd">Password:</label>
-                    <input type="password" name="pwd" id="pwd">
+                    <input type="password" name="pwd" id="pwd" required>
                 </p>
 
                 <p>
                     <label for="pwd_confirm">Confirm password:</label>
-                    <input type="password" name="pwd_confirm" id="pwd_confirm">
+                    <input type="password" name="pwd_confirm" id="pwd_confirm" required>
                 </p>
 
                 <p>
                     <label for="fav_team">Select your favorite Team:</label>
-                    <select name="fav_team" id="fav_team">
-                        <option value="redbull">Redbull</option>
-                        <option value="mclaren">McLaren</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="ferrari">Ferrari</option>
-                        <option value="aston">Aston Martin</option>
-                        <option value="alpine">Alpine</option>
-                        <option value="williams">Williams</option>
-                        <option value="haas">Haas</option>
-                        <option value="sauber">Sauber</option>
-                        <option value="rb">Racing Bulls Visa Cash Apple Pay...</option>
-                    </select>
+                    <div class="select-wrapper">
+                        <select name="fav_team" id="fav_team" required>
+                            <option value="redbull">Redbull</option>
+                            <option value="mclaren">McLaren</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="ferrari">Ferrari</option>
+                            <option value="aston">Aston Martin</option>
+                            <option value="alpine">Alpine</option>
+                            <option value="williams">Williams</option>
+                            <option value="haas">Haas</option>
+                            <option value="sauber">Sauber</option>
+                            <option value="rb">Racing Bulls Visa Cash Apple Pay...</option>
+                        </select>
+                    </div>
                 </p>
 
                 <fieldset>
                     <legend>Choose your favorite driver:</legend>
                     <ul>
                         <li>
-                            <input type="radio" name="favDriver" id="driver1">
+                            <input type="radio" name="favDriver" id="driver1" required>
                             <label for="driver1">Driver 1</label>
                         </li>
                         <li>
-                            <input type="radio" name="favDriver" id="driver2">
+                            <input type="radio" name="favDriver" id="driver2" required>
                             <label for="driver2">Driver 2</label>
                         </li>
                     </ul>
@@ -76,7 +80,7 @@
 
                 <p>
                     <label for="textbox">Tell us about your passion for F1:</label>
-                    <textarea name="textbox" id="textbox"rows="6" cols="42"></textarea>
+                    <textarea name="textbox" id="textbox"rows="6" cols="42" required></textarea>
                 </p>
 
                 <p>
@@ -85,7 +89,7 @@
                 </p>
 
                 <p>
-                    <input type="checkbox" name="terms" id="terms">
+                    <input type="checkbox" name="terms" id="terms" required>
                     <label for="terms">You accept the Terms and Conditions for this imaginary giveaway.</label>
                 </p>
 
