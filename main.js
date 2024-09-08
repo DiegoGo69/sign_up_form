@@ -4,8 +4,8 @@
 const pName = document.querySelector("p > p");
 pName.textContent = "VALID";
 
-const pName = document.querySelector("input + p");
-pName.textContent = "VALID";
+const pName2 = document.querySelector("input + p");
+pName2.textContent += "VALID";
 
 
 // some testing
