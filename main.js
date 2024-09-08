@@ -12,7 +12,12 @@ function setValid(e) {
 // Password lazy validation
 const pwd = document.querySelector("#pwd");
 const pPwd = document.querySelector("#pwd+ p")
-pwd.addEventListener('change', () => validatePwd(pwd, pPwd));
+pwd.addEventListener('change', () => {
+  validatePwd(pwd, pPwd);
+  if (pwd2.classList.contains('valid')) {
+    validatePwd2(pwd2, pPwd2);
+  }
+});
 
 // Confirmation password lazy validation
 const pwd2 = document.querySelector("#pwd_confirm");
