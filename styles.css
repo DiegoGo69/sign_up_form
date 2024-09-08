@@ -258,9 +258,16 @@ textarea:focus {
   border-radius: 2px;
 }
 
-input:focus:invalid {
+/* input:focus:invalid {
 	box-shadow: none;
+} */
+
+input:user-valid {
+	border: 1px solid lime;
+	box-shadow: 0 0 5px 0px lime;
 }
+
+
 
 p * {
 	display: block;

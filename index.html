@@ -6,6 +6,19 @@
     <title>Sign up - DiegoGo69</title>
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
+
+    <style>
+        /* TESTING P INSIDE P SELECTION */
+        p > p {
+            background-color: black;
+            outline: red;
+        }
+
+        input + p {
+            background-color: black;
+            outline: red;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,9 +29,13 @@
         <div class="form-container">
             <form action="#" method="get">
                 <h2>Register and win an imaginary trip to the 2024 Formula 1 Las Vegas GP</h2>    
+                <!-- TESTING ADVANCE SELECTOR IN JS -->
                 <p>
                     <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" pattern="[\w\d]+" required>
+                    <input type="text" name="name" id="name" pattern="[\w\d\-]+" required
+                        autocomplete="off" spellcheck="false" autocapitalize="sentences">
+                    <p id="pName">""</p>
+                    <!-- Neither "p > p "nor "input + p" works -->
                 </p>
 
                 <p>
@@ -28,22 +45,22 @@
 
                 <p>
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" required autocomplete="off" autocapitalize="none">
                 </p>
 
                 <p>
                     <label for="tel">Mobile phone:</label>
-                    <input type="tel" name="" id="">
+                    <input type="tel" name="tel" id="tel" autocomplete="off" maxlength="20">
                 </p>
 
                 <p>
                     <label for="pwd">Password:</label>
-                    <input type="password" name="pwd" id="pwd" required>
+                    <input type="password" name="pwd" id="pwd" required minlength="6">
                 </p>
 
                 <p>
                     <label for="pwd_confirm">Confirm password:</label>
-                    <input type="password" name="pwd_confirm" id="pwd_confirm" required>
+                    <input type="password" name="pwd_confirm" id="pwd_confirm" required minlength="6">
                 </p>
 
                 <p>
@@ -72,7 +89,7 @@
                             <label for="driver1">Driver 1</label>
                         </li>
                         <li>
-                            <input type="radio" name="favDriver" id="driver2" required>
+                            <input type="radio" name="favDriver" id="driver2">
                             <label for="driver2">Driver 2</label>
                         </li>
                     </ul>
