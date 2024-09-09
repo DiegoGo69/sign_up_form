@@ -201,11 +201,16 @@ summary {
 
 /* MINE */
 
-* {
-	outline: 1px solid red;
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
 }
 
 body {
+	background-color: hsl(320, 20%, 3%);
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -228,34 +233,21 @@ header {
 	top: 0;
 }
 
+footer {
+	height: 30vh;
+	background-color: hsl(320, 20%, 3%);
+}
+
 main {
 	display: flex;
 	flex-direction: column;
-}
-
-.form-section {
-	flex: 1;
-	display: flex;
-	padding: 1.2rem;
-}
-
-.img-container,
-.form-container {
-	width: 50%;
-	flex: auto;
-}
-
-.form-container {
-	padding: 2rem;
-	background-color: #0009;
-	border-radius: 1rem;
-
 }
 
 .hero-section {
 	display: flex;
 	height: 100vh;
 	width: 100%;
+	background-color: hsl(0, 90%, 59%);
 	background-image:
 	linear-gradient(to right,hsl(320, 20%, 3%, 1),
 							 hsl(320, 20%, 3%, 1),
@@ -277,23 +269,23 @@ main {
 	display: flex;
 	gap: 2rem;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	height: 80%;
-	width: 25%;
+	width: 28%;
 }
 
 .hero-container p {
 	font-size: 1.7rem;
 	font-weight: 900;
 	letter-spacing: 1px;
+	margin-left: 8%;
 }
 
 .hero-container a {
 	display: block;
 	text-align: center;
-	width: 80%;
-	text-decoration: none;
+	width: 70%;
 	color: hsl(0, 90%, 59%);
 	border: 3px solid hsl(0, 90%, 59%);
 	border-radius: 1rem;
@@ -301,6 +293,24 @@ main {
 	padding: 1rem 2rem;
 	font-size: 1rem;
 	font-weight: 700;
+}
+
+.form-section {
+	flex: 1;
+	display: flex;
+	padding: calc(12vh + 3%) 5vh;
+}
+
+.img-container,
+.form-container {
+	width: 50%;
+	flex: auto;
+}
+
+.form-container {
+	padding: 2rem;
+	background-color: #0009;
+	border-radius: 1rem;
 }
 
 .form-section {
@@ -315,16 +325,61 @@ main {
 	background-size: 10%, cover; /* Resize the background image to cover the entire container */
 }
 
+.disclaimer-section {
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.cards-container ul {
+	display: flex;
+	gap: 2rem;
+}
+
+
+.card {
+	width: 15vw;
+	height: 18vw;
+	display: flex;
+	flex-direction: column;
+	border: 3px solid red;
+	border-radius: 3%;
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.card p {
+	font-size: 1.1rem;
+}
+
+.card-img {
+	height: 110px;
+	align-content: center;
+	border-radius: 3%;
+	padding: 3%;
+
+}
+
+.card-img.f1-logo{
+	background-color: red;
+}
+
+.card-img.gp-logo{
+	background-color: #222;
+}
+
+.card img {
+	width: 100%;
+}
+
 form {
 	display: flex;
 	flex-flow: row wrap;
 	gap: 1rem;
 	align-content:space-between;
-}
-
-
-ul {
-	list-style: none;
 }
 
 .wrapper {
