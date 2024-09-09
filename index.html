@@ -6,19 +6,6 @@
     <title>Sign up - DiegoGo69</title>
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
-
-    <style>
-        /* TESTING P INSIDE P SELECTION */
-        p > p {
-            background-color: black;
-            outline: red;
-        }
-
-        input + p {
-            background-color: black;
-            outline: red;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -29,43 +16,46 @@
         <div class="form-container">
             <form action="#" method="get">
                 <h2>Register and win an imaginary trip to the 2024 Formula 1 Las Vegas GP</h2>    
-                <!-- TESTING ADVANCE SELECTOR IN JS -->
-                <p>
+               <div class="wrapper">
                     <label for="name">Name:</label>
                     <input type="text" name="name" id="name" pattern="[\w\d\-]+" required
                         autocomplete="off" spellcheck="false" autocapitalize="sentences">
-                    <p id="pName">""</p>
-                    <!-- Neither "p > p "nor "input + p" works -->
-                </p>
+                    <p></p>
+                </div>
 
-                <p>
+               <div class="wrapper">
                     <label for="age">Age:</label>
-                    <input type="number" name="age" id="age" step="1" min="1" max="100" required>
-                </p>
+                    <input type="number" name="age" id="age" step="1" min="2" max="100" required>
+                    <p></p>
+                </div>
 
-                <p>
+               <div class="wrapper">
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email" required autocomplete="off" autocapitalize="none">
-                </p>
+                    <p></p>
+                </div>
 
-                <p>
+               <div class="wrapper">
                     <label for="tel">Mobile phone:</label>
-                    <input type="tel" name="tel" id="tel" autocomplete="off" maxlength="20">
-                </p>
+                    <input type="tel" name="tel" id="tel" autocomplete="off" maxlength="20" pattern="[\+\(\)\- \d]+">
+                    <p></p>
+                </div>
 
-                <p>
+               <div class="wrapper">
                     <label for="pwd">Password:</label>
                     <input type="password" name="pwd" id="pwd" required minlength="6">
-                </p>
+                    <p></p>
+                </div>
 
-                <p>
+               <div class="wrapper">
                     <label for="pwd_confirm">Confirm password:</label>
                     <input type="password" name="pwd_confirm" id="pwd_confirm" required minlength="6">
-                </p>
+                    <p></p>
+                </div>
 
-                <p>
+               <div class="full-wrapper">
                     <label for="fav_team">Select your favorite Team:</label>
-                    <div class="select-wrapper">
+                    <div class="select">
                         <select name="fav_team" id="fav_team" required>
                             <option value="redbull">Redbull</option>
                             <option value="mclaren">McLaren</option>
@@ -79,9 +69,9 @@
                             <option value="rb">Racing Bulls Visa Cash Apple Pay...</option>
                         </select>
                     </div>
-                </p>
+                </div>
 
-                <fieldset>
+                <fieldset class="full-wrapper">
                     <legend>Choose your favorite driver:</legend>
                     <ul>
                         <li>
@@ -95,22 +85,23 @@
                     </ul>
                 </fieldset>
 
-                <p>
+               <div class="full-wrapper">
                     <label for="textbox">Tell us about your passion for F1:</label>
-                    <textarea name="textbox" id="textbox"rows="6" cols="42" required></textarea>
-                </p>
+                    <textarea name="textbox" id="textbox"rows="6" cols="42"></textarea>
+                    <p></p>
+                </div>
 
-                <p>
+               <div class="full-wrapper">
                     <label for="file">Share a selfie watching F1! <span>(optional)</span></label>
                     <input type="file" name="file" id="file" accept="image/*" multiple />
-                </p>
+                </div>
 
-                <p>
+               <div class="full-wrapper">
                     <input type="checkbox" name="terms" id="terms" required>
-                    <label for="terms">You accept the Terms and Conditions for this imaginary giveaway.</label>
-                </p>
+                    <label for="terms">Accept terms and conditions for this imaginary giveaway.</label>
+                </div>
 
-                <p><button type="submit">Register</button></p>
+               <div class="full-wrapper"><button type="submit">Register</button></div>
             </form>
         </div>
     </main>

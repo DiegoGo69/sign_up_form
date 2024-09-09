@@ -213,6 +213,7 @@ footer {
 main {
 	flex: 1;
 	display: flex;
+	padding: 1.2rem;
 }
 
 .img-container,
@@ -221,19 +222,50 @@ main {
 	flex: auto;
 }
 
+.form-container {
+	padding: 2rem;
+	background-color: #0009;
+	border-radius: 1rem;
+
+}
+
+form {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 1rem;
+	align-content:space-between;
+}
+
+main {
+	/*background-image: url('img/sphere-las-vegas.webp');  The image used */
+	/* background-image: url('img/drivers-parade.jpg'); The image used */
+	background-image: url('img/f1-las-vegas-2024-logo.png'), url('img/kerbs.jpg'); /* The image used */
+	background-color: #333; /* Used if the image is unavailable */
+	background-origin: border-box;
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-position: 2% 92%, left top; /* Center the image */
+	background-size: 10%, cover; /* Resize the background image to cover the entire container */
+}
+
 ul {
 	list-style: none;
 }
 
-/* textarea {
-	resize: none;
-} */
+.wrapper {
+  width: 40%;
+}
 
-input,
-textarea,
-select,
-button {
-  width: 15rem;
+.full-wrapper {
+	width: 100%;
+}
+
+fieldset > ul{
+	display: flex;
+	gap: 25%;
+}
+
+input {
+	width: 100%;
 }
 
 input:optional {
@@ -262,16 +294,23 @@ textarea:focus {
 	box-shadow: none;
 } */
 
-input:user-valid {
+input[type='password']:user-valid,
+input[type='email']:user-valid,
+input[type='text']:user-valid,
+input[type='number']:user-valid {
 	border: 1px solid lime;
 	box-shadow: 0 0 5px 0px lime;
 }
 
-
-
-p * {
-	display: block;
+/* input[type='password'].invalid {
+	border: 1px solid red;
+	box-shadow: 0 0 5px 0px red;
 }
+
+input[type='password'].valid {
+	border: 1px solid lime;
+	box-shadow: 0 0 5px 0px lime;
+} */
 
 /* blue placeholder on email fields */
 input[type="email"]::placeholder {
@@ -284,12 +323,12 @@ select {
   height: 100%;
 }
 
-.select-wrapper {
+.select {
   position: relative;
   width: 17rem;
 }
 
-.select-wrapper::after {
+.select::after {
   content: "▼";
   font-size: 1rem;
   top: 0px;
@@ -302,7 +341,6 @@ textarea {
 	display: block;
   
 	padding: 10px;   
-	resize  : none;
 	overflow: auto;
 }
 
@@ -345,6 +383,38 @@ input[type="radio"]::before {
   input[type="radio"]:checked::before {
 	transform: translate(30%, 30%) scale(1);
 	transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
-  }
+}
 
+input[type='checkbox'] {
+	width: auto;
+}
+
+label[for='terms'] {
+	width: 80%
+}
+
+input[type='file'] {
+	appearance: none;
+	height: 0;
+	width: 0;
+}
+
+label[for="file"] {
+	background-color: silver;
+	padding: 2% 3%;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 1.5;
+}
   
+label[for="file"]:hover {
+	background: linear-gradient(to bottom, #fff, #ddd);
+}
+  
+label[for="file"]:active {
+	box-shadow: inset 1px 1px 3px #ccc;
+}
+
+body {
+	color: white;
+}
