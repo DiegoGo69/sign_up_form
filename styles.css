@@ -335,12 +335,16 @@ main {
 }
 
 .disclaimer-section {
-	height: 50vh;
+	height: 60vh;
 	display: flex;
 	background-color: hsl(0, 70%, 50%);
 	flex-direction: column;
 	gap: 2rem;
+	padding: 10%;
 	align-items: center;
+	font-size: 1.2rem;
+	text-align: center;
+	font-weight: 400;
 	justify-content: center;
 }
 
@@ -350,7 +354,7 @@ main {
 }
 
 
-.card {
+.card a{
 	width: 15vw;
 	height:32vh;
 	display: flex;
@@ -361,8 +365,8 @@ main {
 	font-weight: 700;
 	font-size: 1.1rem;
 	border-radius: 3%;
-	gap: 1rem;
-	padding: 1rem;
+	gap: 4%;
+	padding: 6%;
 	cursor: pointer ;
 }
 
