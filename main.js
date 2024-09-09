@@ -18,7 +18,6 @@ pwd.addEventListener('change', () => {
     validatePwd2(pwd2, pPwd2);
   }
 });
-
 // Confirmation password lazy validation
 const pwd2 = document.querySelector("#pwd_confirm");
 const pPwd2 = document.querySelector("#pwd_confirm + p")
@@ -37,7 +36,7 @@ pwd2.addEventListener('input', () => {
   }
 });
 
-// Password agressive validation
+// Password validation
 function validatePwd(p, pP) {
     // if too short
     if (p.validity.tooShort) {
@@ -53,7 +52,7 @@ function validatePwd(p, pP) {
     }
 };
 
-// Confirm password agressive validation
+// Confirm password validation
 function validatePwd2(p, pP) {
      // if too short
     if (p.validity.tooShort) {
@@ -75,13 +74,49 @@ function validatePwd2(p, pP) {
     }
 }
 
-
-// some testing
+// Email validation
 const email = document.querySelector("#email");
-email.addEventListener("input", (event) => {
-  if (email.validity.typeMismatch) {
-    email.setCustomValidity("I am expecting an email address!");
-  } else {
-    email.setCustomValidity("");
+const pEmail = document.querySelector('#email + p');
+email.addEventListener("change", () => validateEmail(email, pEmail));
+// Email Aggressive validation
+email.addEventListener('input', () => {
+  if (email.classList.contains('invalid') || email.classList.contains('valid')) {
+    validateEmail(email, pEmail);
   }
 });
+// Email validation function
+function validateEmail(email, pEmail) {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("I am expecting an email address!");
+    pEmail.textContent = "Email address is not valid";
+    setInvalid(email);
+  } else {
+    email.setCustomValidity("");
+    pEmail.textContent = "Email is valid :)";
+    setValid(email);
+  }
+}
+
+// Checkbox validation
+const check = document.querySelector('#terms');
+check.setCustomValidity("Accept the Terms and Conditions to participate");
+check.addEventListener('click', () => {
+if (check.checked) {
+    check.setCustomValidity("");
+} else {
+    check.setCustomValidity("Accept the Terms and Conditions to participate");
+  }
+})
+
+
+// Age validation
+const age = document.querySelector('#age');
+const pAge = document.querySelector('#age + p');
+age.addEventListener('input', () => {
+  if (age.checkValidity()) {
+    pAge.textContent = "";
+  } else {
+    pAge.textContent = "Enter an age between 2 and 100";
+  }
+})
+
