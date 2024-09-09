@@ -200,17 +200,40 @@ summary {
 
 
 /* MINE */
+
+* {
+	outline: 1px solid red;
+}
+
 body {
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
 header,
 footer {
-	flex: 0;
+	flex: 0 0 auto;
+}
+
+header {
+	height: 12vh;
+	background-color: hsl(320, 20%, 3%);
+	color: hsl(0, 90%, 59%);
+	font-size: 1.4rem;
+	font-weight: 0.9;
+	align-content: center;
+	text-align: center;
+	position: sticky;
+	top: 0;
 }
 
 main {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-section {
 	flex: 1;
 	display: flex;
 	padding: 1.2rem;
@@ -229,6 +252,69 @@ main {
 
 }
 
+.hero-section {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	background-image:
+	linear-gradient(to right,hsl(320, 20%, 3%, 1),
+							 hsl(320, 20%, 3%, 1),
+							 hsl(320, 20%, 3%, 0.5),
+							 hsl(320, 20%, 3%, 0.2),
+							 hsl(320, 20%, 3%, 0)
+							 ),
+	url('img/charles-front-view.jpg');
+	background-repeat: no-repeat;
+	background-position: left top, 10vw top;
+	background-size: cover;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 2rem;
+}
+
+
+.hero-container {
+	display: flex;
+	gap: 2rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 80%;
+	width: 25%;
+}
+
+.hero-container p {
+	font-size: 1.7rem;
+	font-weight: 900;
+	letter-spacing: 1px;
+}
+
+.hero-container a {
+	display: block;
+	text-align: center;
+	width: 80%;
+	text-decoration: none;
+	color: hsl(0, 90%, 59%);
+	border: 3px solid hsl(0, 90%, 59%);
+	border-radius: 1rem;
+	background-color: transparent;
+	padding: 1rem 2rem;
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.form-section {
+	/*background-image: url('img/sphere-las-vegas.webp');  The image used */
+	/* background-image: url('img/drivers-parade.jpg'); The image used */
+	background-image: url('img/f1-las-vegas-2024-logo.png'), url('img/kerbs.jpg'); /* The image used */
+	background-color: #333; /* Used if the image is unavailable */
+	background-origin: border-box;
+	/* background-attachment: fixed, fixed; */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-position: 2% 92%, left top; /* Center the image */
+	background-size: 10%, cover; /* Resize the background image to cover the entire container */
+}
+
 form {
 	display: flex;
 	flex-flow: row wrap;
@@ -236,16 +322,6 @@ form {
 	align-content:space-between;
 }
 
-main {
-	/*background-image: url('img/sphere-las-vegas.webp');  The image used */
-	/* background-image: url('img/drivers-parade.jpg'); The image used */
-	background-image: url('img/f1-las-vegas-2024-logo.png'), url('img/kerbs.jpg'); /* The image used */
-	background-color: #333; /* Used if the image is unavailable */
-	background-origin: border-box;
-	background-repeat: no-repeat; /* Do not repeat the image */
-	background-position: 2% 92%, left top; /* Center the image */
-	background-size: 10%, cover; /* Resize the background image to cover the entire container */
-}
 
 ul {
 	list-style: none;
