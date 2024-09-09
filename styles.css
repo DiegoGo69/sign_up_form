@@ -207,6 +207,9 @@ ul {
 
 a {
 	text-decoration: none;
+	display: block;
+	color: inherit;
+	font: inherit;
 }
 
 body {
@@ -234,8 +237,14 @@ header {
 }
 
 footer {
-	height: 30vh;
+	display: flex;
+	height: 20vh;
 	background-color: hsl(320, 20%, 3%);
+}
+
+footer > * {
+	padding: 1rem;
+	flex: 1;
 }
 
 main {
@@ -328,6 +337,7 @@ main {
 .disclaimer-section {
 	height: 50vh;
 	display: flex;
+	background-color: hsl(0, 70%, 50%);
 	flex-direction: column;
 	gap: 2rem;
 	align-items: center;
@@ -342,13 +352,18 @@ main {
 
 .card {
 	width: 15vw;
-	height: 18vw;
+	height:32vh;
 	display: flex;
 	flex-direction: column;
-	border: 3px solid red;
+	border: 3px solid white;
+	background-color: white;
+	color: hsl(0, 80%, 60%);
+	font-weight: 700;
+	font-size: 1.1rem;
 	border-radius: 3%;
 	gap: 1rem;
 	padding: 1rem;
+	cursor: pointer ;
 }
 
 .card p {
