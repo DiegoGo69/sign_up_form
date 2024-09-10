@@ -205,7 +205,7 @@ ul {
 	list-style: none;
 }
 
-a {
+main a {
 	text-decoration: none;
 	display: block;
 	color: inherit;
@@ -221,15 +221,15 @@ body {
 
 header,
 footer {
-	flex: 0 0 auto;
+	flex: none;
 }
 
 header {
 	height: 12vh;
 	background-color: hsl(320, 20%, 3%);
 	color: hsl(0, 90%, 59%);
-	font-size: 1.4rem;
-	font-weight: 0.9;
+	font-size: clamp(1.2rem, 1rem + 2vw, 3rem);
+	font-weight: 900;
 	align-content: center;
 	text-align: center;
 	position: sticky;
@@ -238,14 +238,11 @@ header {
 
 footer {
 	display: flex;
-	height: 20vh;
+	height: 15vh;
+	padding: 1%;
 	background-color: hsl(320, 20%, 3%);
 }
 
-footer > * {
-	padding: 1rem;
-	flex: 1;
-}
 
 main {
 	display: flex;
@@ -253,6 +250,7 @@ main {
 }
 
 .hero-section {
+	flex: auto;
 	display: flex;
 	height: 100vh;
 	width: 100%;
@@ -272,11 +270,6 @@ main {
 	align-items: center;
 	padding: 2rem;
 }
-
-* {
-	outline: 1px solid yellow;	
-}
-
 
 .hero-container {
 	display: flex;
@@ -303,12 +296,11 @@ main {
 	border-radius: 1rem;
 	background-color: transparent;
 	padding: 3% 6%;
-	font-size: clamp(0.8rem, calc(0.8rem + 40%), 1.8rem);
+	font-size: clamp(0.8rem, calc(0.7rem + 1vw), 1.8rem);
 	font-weight: 900;
 }
 
 .form-section {
-	flex: 1;
 	display: flex;
 	padding: calc(12vh + 3%) 5vh;
 }
@@ -326,6 +318,7 @@ main {
 }
 
 .form-section {
+	flex: auto;
 	/*background-image: url('img/sphere-las-vegas.webp');  The image used */
 	/* background-image: url('img/drivers-parade.jpg'); The image used */
 	background-image: url('img/f1-las-vegas-2024-logo.png'), url('img/kerbs.jpg'); /* The image used */
@@ -338,22 +331,30 @@ main {
 }
 
 .disclaimer-section {
+	flex: 1;
 	height: 60vh;
 	display: flex;
 	background-color: hsl(0, 70%, 50%);
 	flex-direction: column;
 	gap: 2rem;
-	padding: 10%;
+	padding: 3%;
 	align-items: center;
-	font-size: 1.2rem;
 	text-align: center;
-	font-weight: 400;
 	justify-content: center;
 }
 
-.disclaimer-container h2{
+.disclaimer-container > h2 {
+	background-color: #222;
+	color: hsl(0, 90%, 59%);
+	font-size: clamp(1.4rem, 0.8rem + 1vw, 2rem);
 	letter-spacing: 1px;
 	font-weight: 900;
+	margin-bottom: 1rem;
+	padding: 0.8rem 2rem;
+}
+
+.disclaimer-container > p {
+	font-size: clamp(1rem, 0.8rem + 1vw, 1.4rem);
 }
 
 .cards-container ul {
@@ -362,8 +363,8 @@ main {
 }
 
 .card {
-	width: clamp(96px, 15vw, 210px);
-	height:30vh;
+	width: clamp(100px, 90px + 10vw, 210px);
+	flex: auto;
 }
 
 
@@ -382,17 +383,15 @@ main {
 }
 
 .card p {
-	flex: 1 1 30%;
 	font-weight: 700;
 	font-size: clamp(0.7rem, 0.4rem + 1vw, 1.1rem);
 }
 
 .card-img {
-	height: clamp(40px, 38px + 8%, 110px);
+	height: clamp(40px, 38px + 5vw, 110px);
 	align-content: center;
 	border-radius: 3%;
 	padding: 3%;
-	flex: 1 1 auto;
 }
 
 .card-img.f1-logo{
@@ -405,6 +404,12 @@ main {
 
 .card img {
 	width: 100%;
+}
+
+.contact-msg,
+.contact-info {
+	padding: 1%;
+	flex: 1;
 }
 
 form {
@@ -451,6 +456,10 @@ input[type="password"]:focus,
 textarea:focus {
   box-shadow: inset 1px 1px 3px #ccc;
   border-radius: 2px;
+}
+
+textarea {
+	width: 100%;
 }
 
 /* input:focus:invalid {
