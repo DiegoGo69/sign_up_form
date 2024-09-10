@@ -116,7 +116,7 @@ age.addEventListener('input', () => {
   if (age.checkValidity()) {
     pAge.textContent = "";
   } else {
-    pAge.textContent = "Enter an age between 2 and 100";
+    pAge.textContent = "Age must be between 2 and 100";
   }
 })
 
