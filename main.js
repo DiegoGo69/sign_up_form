@@ -83,7 +83,11 @@ function validateEmail(email, pEmail) {
     email.setCustomValidity("I am expecting an email address!");
     pEmail.textContent = "Email address is not valid";
     setInvalid(email);
-  } else {
+  } else if (email.value === "") {
+    pEmail.textContent = "I am expecting an email address :D";
+    email.setCustomValidity("I am expecting an email address!");
+  }
+  else {
     email.setCustomValidity("");
     pEmail.textContent = "Email is valid :)";
     setTimeout(() => pEmail.textContent = "", 5000);
