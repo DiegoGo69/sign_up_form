@@ -18,7 +18,7 @@
                     Formula One is arriving to Las Vegas, for one of the most exciting weekends of the year.
                     Don't miss this chance and try your luck!
                 </p>
-                <a href="#form-section">Register now</a>
+                <a href="#form-section" class="btn">Register now</a>
             </div>
         </div>
 
@@ -44,8 +44,8 @@
                         <p></p>
                     </div>
                    <div class="wrapper">
-                        <label for="tel">Mobile phone:</label>
-                        <input type="tel" name="tel" id="tel" autocomplete="off" maxlength="20" pattern="[\+\(\)\- \d]+">
+                        <label for="phone">Mobile phone:</label>
+                        <input type="tel" name="tel" id="phone" autocomplete="off" maxlength="20" pattern="[\+\(\)\- \d]+">
                         <p></p>
                     </div>
                    <div class="wrapper">
@@ -80,18 +80,18 @@
                         <legend>Choose your favorite driver:</legend>
                         <ul>
                             <li>
-                                <input type="radio" name="favDriver" id="driver1" required>
+                                <input type="radio" name="favDriver" id="driver1" disabled required>
                                 <label for="driver1">Driver 1</label>
                             </li>
                             <li>
-                                <input type="radio" name="favDriver" id="driver2">
+                                <input type="radio" name="favDriver" id="driver2" disabled>
                                 <label for="driver2">Driver 2</label>
                             </li>
                         </ul>
                     </fieldset>
                    <div class="full-wrapper">
                         <label for="textbox">Tell us about your passion for F1:</label>
-                        <textarea name="textbox" id="textbox"rows="6" cols="42"></textarea>
+                        <textarea name="textbox" id="textbox"rows="4" cols="42"></textarea>
                         <p></p>
                     </div>
                    <div class="full-wrapper">
@@ -102,7 +102,7 @@
                         <input type="checkbox" name="terms" id="terms" required>
                         <label for="terms">Accept terms and conditions for this imaginary giveaway.</label>
                     </div>
-                   <div class="wrapper"><button type="submit">Register</button></div>
+                   <div class="wrapper"><button type="submit" class="btn">Register</button></div>
                 </form>
             </div>
         </div>
