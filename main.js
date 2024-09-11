@@ -120,3 +120,86 @@ age.addEventListener('input', () => {
   }
 })
 
+const teamSelect = document.querySelector('#fav_team');
+const driver1 = document.querySelector('#driver1');
+const driver2 = document.querySelector('#driver2');
+const labelDriver1 = document.querySelector('label[for="driver1"]');
+const labelDriver2 = document.querySelector('label[for="driver2"]');
+
+teamSelect.addEventListener('change', event => {
+  driver2.removeAttribute('disabled');
+  driver2.checked = false;
+  switch (teamSelect.value) {
+    case 'redbull':
+      driver1.value = "verstappen";
+      labelDriver1.textContent = "Verstappen";
+      driver2.value = "checo";
+      labelDriver2.textContent = "Checo";
+      break;
+
+    case 'mclaren':
+      driver1.value = "piastri";
+      labelDriver1.textContent = "Piastri";
+      driver2.value = "overrated";
+      driver2.setAttribute('disabled', true);
+      labelDriver2.textContent = "Norris";
+      break;
+
+    case 'mercedes':
+      driver1.value = "hamilton";
+      labelDriver1.textContent = "Hamilton";
+      driver2.value = "russel";
+      labelDriver2.textContent = "Russel";
+      break;
+
+    case 'ferrari':
+      driver1.value = "leclerc";
+      labelDriver1.textContent = "Leclerc";
+      driver2.value = "sainz";
+      labelDriver2.textContent = "Sainz";
+      break;
+
+    case 'aston':
+      driver1.value = "alonso";
+      labelDriver1.textContent = "Alonso";
+      driver2.value = "stroll";
+      labelDriver2.textContent = "Stroll";
+      break;
+
+    case 'alpine':
+      driver1.value = "gasly";
+      labelDriver1.textContent = "French 1";
+      driver2.value = "ocon";
+      labelDriver2.textContent = "French 2";
+      break;
+
+    case 'williams':
+      driver1.value = "colapinto";
+      labelDriver1.textContent = "Colapinto";
+      driver2.value = "albon";
+      labelDriver2.textContent = "Albon";
+      break;
+
+    case 'haas':
+      driver1.value = "hulkenber";
+      labelDriver1.textContent = "HuLKenberGG";
+      driver2.value = "magnussen";
+      labelDriver2.textContent = "Magnussen";
+      break;
+
+    case 'sauber':
+      driver1.value = "bottas";
+      labelDriver1.textContent = "Bottas";
+      driver2.value = "zhou";
+      labelDriver2.textContent = "Zhou";
+      break;
+
+    case 'rb':
+      driver1.value = "tsunoda";
+      labelDriver1.textContent = "Tsunoda";
+      driver2.value = "washed";
+      labelDriver2.textContent = "Washed";
+      break;
+  }
+})
+
