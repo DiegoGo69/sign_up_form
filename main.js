@@ -1,20 +1,11 @@
 const log = console.log;
 
-function setInvalid(e) {
-  e.classList.remove('valid');
-  e.classList.add('invalid');
-}
-
-function setValid(e) {
-  e.classList.remove('invalid');
-  e.classList.add('valid');
-}
 // Password lazy validation
 const pwd = document.querySelector("#pwd");
 const pPwd = document.querySelector("#pwd+ p")
 pwd.addEventListener('change', () => {
   validatePwd(pwd, pPwd);
-  if (pwd2.classList.contains('valid')) {
+  if (pwd2.classList.contains('valid') || pwd2.classList.contains('invalid')) {
     validatePwd2(pwd2, pPwd2);
   }
 });
@@ -48,6 +39,7 @@ function validatePwd(p, pP) {
     else {
       pP.textContent = "Password valid :)";
       p.setCustomValidity("");
+      setTimeout(() => pP.textContent = "", 5000)
       setValid(p);
     }
 };
@@ -70,6 +62,7 @@ function validatePwd2(p, pP) {
     else {
       pP.textContent = "Passwords match";
       p.setCustomValidity("");
+      setTimeout(() => pP.textContent = "", 5000)
       setValid(p);
     }
 }
@@ -93,6 +86,7 @@ function validateEmail(email, pEmail) {
   } else {
     email.setCustomValidity("");
     pEmail.textContent = "Email is valid :)";
+    setTimeout(() => pEmail.textContent = "", 5000);
     setValid(email);
   }
 }
@@ -108,18 +102,42 @@ if (check.checked) {
   }
 })
 
+// Name validation
+const name = document.querySelector('#name');
+const pName = document.querySelector('#name + p');
+name.addEventListener('change', () => {
+  if (name.checkValidity()) {
+    pName.textContent = "Name is valid :)";
+    setTimeout(() => pName.textContent = "", 5000);
+  } else {
+    pName.textContent = "Name must not contain special characters";
+  }
+})
 
 // Age validation
 const age = document.querySelector('#age');
 const pAge = document.querySelector('#age + p');
-age.addEventListener('input', () => {
+age.addEventListener('change', () => {
   if (age.checkValidity()) {
-    pAge.textContent = "";
+    pAge.textContent = "Age is valid :)";
+    setTimeout(() => pAge.textContent = "", 5000);
   } else {
     pAge.textContent = "Age must be between 2 and 100";
   }
 })
 
+const phone = document.querySelector('#phone');
+const pPhone = document.querySelector('#phone + p');
+phone.addEventListener('change', () => {
+  if (phone.checkValidity()) {
+    pPhone.textContent = "Meets the minimun requirements";
+    setTimeout(() => pPhone.textContent = "", 5000);
+  } else {
+    pPhone.textContent = "Use format (XXX)-XXX-XXXX or similar";
+  }
+})
+
+// Fav team and driver validation
 const teamSelect = document.querySelector('#fav_team');
 const driver1 = document.querySelector('#driver1');
 const driver2 = document.querySelector('#driver2');
@@ -127,6 +145,9 @@ const labelDriver1 = document.querySelector('label[for="driver1"]');
 const labelDriver2 = document.querySelector('label[for="driver2"]');
 
 teamSelect.addEventListener('change', event => {
+  // Delete disabled attributes on change
+  driver1.removeAttribute('disabled');
+  driver1.checked = false;
   driver2.removeAttribute('disabled');
   driver2.checked = false;
   switch (teamSelect.value) {
@@ -203,3 +224,12 @@ teamSelect.addEventListener('change', event => {
   }
 })
 
+function setInvalid(e) {
+  e.classList.remove('valid');
+  e.classList.add('invalid');
+}
+
+function setValid(e) {
+  e.classList.remove('invalid');
+  e.classList.add('valid');
+}
