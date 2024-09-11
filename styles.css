@@ -233,6 +233,7 @@ header {
 	align-content: center;
 	text-align: center;
 	position: sticky;
+	z-index: 2;
 	top: 0;
 }
 
@@ -295,24 +296,6 @@ main {
 }
 
 .form-section {
-	flex: auto;
-	display: flex;
-	padding: calc(12vh + 3%) 5vh;
-}
-
-.img-container,
-.form-container {
-	width: 50%;
-	flex: auto;
-}
-
-.form-container {
-	padding: 2rem;
-	background-color: #0009;
-	border-radius: 1rem;
-}
-
-.form-section {
 	flex: 1;
 	/*background-image: url('img/sphere-las-vegas.webp');  The image used */
 	/* background-image: url('img/drivers-parade.jpg'); The image used */
@@ -323,7 +306,34 @@ main {
 	background-repeat: no-repeat; /* Do not repeat the image */
 	background-position: 2% 92%, left top; /* Center the image */
 	background-size: 10%, cover; /* Resize the background image to cover the entire container */
+	display: flex;
+	padding: 12vh 3%;
 }
+
+.img-container,
+.form-container {
+	width: 50%;
+	flex: auto;
+}
+
+.form-container {
+	padding: 2% 3%;
+	background-color: #000a;
+	border-radius: 1rem;
+}
+
+form {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 0.5rem;
+	align-content:space-between;
+}
+
+form input,
+select {
+	padding: 0.1rem 0.2rem;
+}
+
 
 .disclaimer-section {
 	flex: 1;
@@ -415,21 +425,9 @@ footer svg {
 	margin-right: 0.2rem;
 }
 
-
-form {
-	display: flex;
-	flex-flow: row wrap;
-	gap: 1rem;
-	align-content:space-between;
-}
-
-form input,
-select {
-	padding: 0.1rem 0.2rem;
-}
-
 fieldset {
 	padding: 0.2rem 0.4rem;
+	border: none;
 }
 
 .wrapper p {
@@ -444,6 +442,10 @@ fieldset {
 
 .full-wrapper {
 	width: 100%;
+}
+
+.full-wrapper + .full-wrapper {
+	margin-top: 0.6rem;
 }
 
 form button {
@@ -492,6 +494,7 @@ textarea:focus {
 }
 
 textarea {
+	margin-top: 0.4rem;
 	width: 100%;
 }
 
@@ -544,35 +547,36 @@ button:focus {
 }
 
 input[type="radio"] {
-	appearance: none;
+	padding: 0;
+    appearance: none;
 }
 
 input[type="radio"] {
-	width: 1.25rem;
-	height: 1.25rem;
-	border-radius: 0.6rem;
-	border: 2px solid gray;
-	/* Adjusts the position of the checkboxes on the text baseline */
-	vertical-align: -2px;
-	outline: none;
+width: 20px;
+height: 20px;
+border-radius: 10px;
+border: 2px solid gray;
+/* Adjusts the position of the checkboxes on the text baseline */
+vertical-align: -2px;
+outline: none;
 }
 
 input[type="radio"]::before {
-	display: block;
-	content: " ";
-	width: 0.6rem;
-	height: 0.6rem;
-	border-radius: 0.3rem;
-	background-color: red;
-	font-size: 1rem;
-	transform: translate(30%, 30%) scale(0);
-	transform-origin: center;
-	transition: all 0.3s ease-in;
-  }
-  
-  input[type="radio"]:checked::before {
-	transform: translate(30%, 30%) scale(1);
-	transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+display: block;
+content: " ";
+width: 10px;
+height: 10px;
+border-radius: 6px;
+background-color: red;
+font-size: 1.2em;
+transform: translate(4px, 4px) scale(0);
+transform-origin: center;
+transition: all 0.3s ease-in;
+}
+
+input[type="radio"]:checked::before {
+transform: translate(4px, 4px) scale(1);
+transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
 }
 
 input[type='checkbox'] {
@@ -584,23 +588,27 @@ label[for='terms'] {
 }
 
 input[type='file'] {
+	padding: 0;
+	border: none;
 	appearance: none;
 	height: 0;
 	width: 0;
 }
 
 label[for="file"] {
-	background-color: silver;
-	padding: 2% 3%;
+	display: block;
+	width: 100%;
+	padding: 10px 20px;
 	border-radius: 3px;
 	text-align: center;
 	line-height: 1.5;
+	background-color: rgb(143, 143, 143);
 }
-  
+
 label[for="file"]:hover {
-	background: linear-gradient(to bottom, #fff, #ddd);
+	background-color: rgb(126, 126, 126);
 }
-  
+
 label[for="file"]:active {
 	box-shadow: inset 1px 1px 3px #ccc;
 }
