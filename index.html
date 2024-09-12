@@ -27,18 +27,18 @@
                 <form action="#" method="get">
                     <h2>Register and win an imaginary trip to the 2024 Formula 1 Las Vegas GP</h2>
                    <div class="wrapper">
-                        <label for="name">Name:</label>
+                        <label for="name" class="required">Name:</label>
                         <input type="text" name="name" id="name" pattern="[\w\d\-]+" required
                             autocomplete="off" spellcheck="false" autocapitalize="sentences">
                         <p></p>
                     </div>
                    <div class="wrapper">
-                        <label for="age">Age:</label>
+                        <label for="age" class="required">Age:</label>
                         <input type="number" name="age" id="age" step="1" min="2" max="100" required>
                         <p></p>
                     </div>
                    <div class="wrapper">
-                        <label for="email">Email:</label>
+                        <label for="email" class="required">Email:</label>
                         <input type="email" name="email" id="email" required autocomplete="off" autocapitalize="none">
                         <p></p>
                     </div>
@@ -48,17 +48,17 @@
                         <p></p>
                     </div>
                    <div class="wrapper">
-                        <label for="pwd">Password:</label>
+                        <label for="pwd" class="required">Password:</label>
                         <input type="password" name="pwd" id="pwd" required minlength="6">
                         <p></p>
                     </div>
                    <div class="wrapper">
-                        <label for="pwd_confirm">Confirm password:</label>
+                        <label for="pwd_confirm" class="required">Confirm password:</label>
                         <input type="password" name="pwd_confirm" id="pwd_confirm" required minlength="6">
                         <p></p>
                     </div>
                    <div class="full-wrapper">
-                        <label for="fav_team">Select your favorite Team:</label>
+                        <label for="fav_team" class="required">Select your favorite Team:</label>
                         <div class="select">
                             <select name="fav_team" id="fav_team" required>
                                 <option value="" selected disabled>Choose a team</option>
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <fieldset class="full-wrapper">
-                        <legend>Choose your favorite driver:</legend>
+                        <legend class="required">Choose your favorite driver:</legend>
                         <ul>
                             <li>
                                 <input type="radio" name="favDriver" id="driver1" disabled required>
@@ -98,8 +98,9 @@
                         <input type="file" name="file" id="file" accept="image/*" multiple />
                     </div>
                    <div class="full-wrapper">
-                        <input type="checkbox" name="terms" id="terms" required>
-                        <label for="terms">Accept terms and conditions for this imaginary giveaway.</label>
+                        <label for="terms" class="required">
+                            <input type="checkbox" name="terms" id="terms" required>
+                            Accept terms and conditions for this imaginary giveaway.</label>
                     </div>
                    <div class="wrapper"><button type="submit" class="btn">Register</button></div>
                 </form>
