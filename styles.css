@@ -393,7 +393,7 @@ form button {
 	color: white;
 	background-color: var(--brighter-red);
 	border-radius: 0.5rem;
-	padding: 2% 3%;
+	padding: min(2%, 18px) min(3%, 12px);
 	font-size: clamp(0.8rem, calc(0.6rem + 0.6vw), 1.1rem);
 	font-weight: 900;
 	margin: auto;
@@ -577,6 +577,7 @@ label.required::after {
 	content: '*';
 	position: absolute;
 	right: 0.5rem;
+	top: 0;
 }
 
 form h2 {
