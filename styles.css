@@ -1,14 +1,5 @@
 /*! modern-normalize v3.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
-/*
-Document
-========
-*/
-
-/**
-Use a better box model (opinionated).
-*/
-
 *,
 ::before,
 ::after {
@@ -33,24 +24,10 @@ html {
 	tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
 }
 
-/*
-Text-level semantics
-====================
-*/
-
-/**
-Add the correct font weight in Chrome and Safari.
-*/
-
 b,
 strong {
 	font-weight: bolder;
 }
-
-/**
-1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
-2. Correct the odd 'em' font sizing in all browsers.
-*/
 
 code,
 kbd,
@@ -66,17 +43,9 @@ pre {
 	font-size: 1em; /* 2 */
 }
 
-/**
-Add the correct font size in all browsers.
-*/
-
 small {
 	font-size: 80%;
 }
-
-/**
-Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
-*/
 
 sub,
 sup {
@@ -94,28 +63,9 @@ sup {
 	top: -0.5em;
 }
 
-/*
-Tabular data
-============
-*/
-
-/**
-Correct table border color inheritance in Chrome and Safari. (https://issues.chromium.org/issues/40615503, https://bugs.webkit.org/show_bug.cgi?id=195016)
-*/
-
 table {
 	border-color: currentcolor;
 }
-
-/*
-Forms
-=====
-*/
-
-/**
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-*/
 
 button,
 input,
@@ -127,10 +77,6 @@ textarea {
 	line-height: 1.25; /* 1 */
 }
 
-/**
-Correct the inability to style clickable types in iOS and Safari.
-*/
-
 button,
 [type='button'],
 [type='reset'],
@@ -138,66 +84,32 @@ button,
 	-webkit-appearance: button;
 }
 
-/**
-Add the correct vertical alignment in Chrome and Firefox.
-*/
-
 progress {
 	vertical-align: baseline;
 }
-
-/**
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
 	height: auto;
 }
 
-/**
-1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
-*/
-
 [type='search'] {
 	-webkit-appearance: textfield; /* 1 */
 	outline-offset: -2px; /* 2 */
 }
 
-/**
-Remove the inner padding in Chrome and Safari on macOS.
-*/
-
 ::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
-
-/**
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to 'inherit' in Safari.
-*/
 
 ::-webkit-file-upload-button {
 	-webkit-appearance: button; /* 1 */
 	font: inherit; /* 2 */
 }
 
-/*
-Interactive
-===========
-*/
-
-/*
-Add the correct display in Chrome and Safari.
-*/
-
 summary {
 	display: list-item;
 }
-
-
-
 
 /* MINE */
 
@@ -244,7 +156,6 @@ footer {
 	background-color: hsl(320, 20%, 3%);
 }
 
-
 main {
 	display: flex;
 	flex-direction: column;
@@ -269,6 +180,15 @@ main {
 	justify-content: flex-start;
 	align-items: center;
 	padding: 3%;
+	position: relative;
+}
+
+.hero-section::after {
+	position: absolute;
+	content: "Photo by alenpetak11";
+	font-size: 0.8rem;
+	bottom: 1rem;
+	right: 1rem;
 }
 
 .hero-container {
@@ -302,17 +222,26 @@ main {
 
 .form-section {
 	flex: 1;
-	/*background-image: url('img/sphere-las-vegas.webp');  The image used */
-	/* background-image: url('img/drivers-parade.jpg'); The image used */
-	background-image: url('img/f1-las-vegas-2024-logo.png'), url('img/kerbs.jpg'); /* The image used */
+	background-image: url('img/f1-las-vegas-2024-logo.png'),
+		url('img/kerbs.jpg'); /* The image used */
 	background-color: #333; /* Used if the image is unavailable */
 	background-origin: border-box;
 	/* background-attachment: fixed, fixed; */
 	background-repeat: no-repeat; /* Do not repeat the image */
-	background-position: 2% 92%, left top; /* Center the image */
+	background-position: 2% 92%,
+		left top; /* Center the image */
 	background-size: 10%, cover; /* Resize the background image to cover the entire container */
 	display: flex;
 	padding: 12vh 3%;
+	position: relative;
+}
+
+.form-section::after {
+	position: absolute;
+	content: "Photo by Dan Istitene";
+	font-size: 0.8rem;
+	bottom: 1rem;
+	left: 1rem;
 }
 
 .img-container,
