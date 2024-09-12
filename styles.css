@@ -234,6 +234,7 @@ main {
 	display: flex;
 	padding: 12vh 3%;
 	position: relative;
+	justify-content: flex-end;
 }
 
 .form-section::after {
@@ -244,17 +245,18 @@ main {
 	left: 1rem;
 }
 
-.img-container,
 .form-container {
 	width: 50%;
-	flex: auto;
-}
-
-.form-container {
 	padding: 2% 3%;
 	background-color: #000a;
 	border-radius: 1rem;
 }
+/* Expand form when screen width is 800px */
+@media only screen and (max-width: 800px) {
+	.form-container {
+	  width: 100%;
+	}
+  }
 
 form {
 	display: flex;
